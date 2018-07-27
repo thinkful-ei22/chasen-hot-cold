@@ -23,28 +23,35 @@ export default class Game extends Component {
         
         let feedback;
         const diff = Math.abs(num- this.state.correctAnswer)
+        const diff2 = Math.abs(this.state.guesses[this.state.guesses.length-1]-this.state.correctAnswer)
+        let warmerColder = ''
+        
+        if(this.state.guesses.length >=1){
+            diff < diff2 ? warmerColder=', and your\'e getting warmer' : warmerColder= ', and your\'e getting colder'
+        }
+
         if(diff>=50){
-            feedback = 'You are Ice Cold'
+            feedback = 'You are Ice Cold'+warmerColder
         }else if(diff>=30){
-            feedback = 'You are Cold'
+            feedback = 'You are Cold'+warmerColder
         }else if(diff>=10){
-            feedback='You are Warm'
+            feedback='You are Warm'+warmerColder
         }else if (diff>=4){
-            feedback= 'You are Hot'
+            feedback= 'You are Hot'+warmerColder
         }else if (diff>=1){
-            feedback= 'You are on fire'
+            feedback= 'You are on fire'+warmerColder
         }else{
             feedback= 'WINNER'
         }
         this.setState({
-            userGuess: Number(num),
+            // userGuess: Number(num),
             guesses: [...this.state.guesses, num],
             feedback: feedback
         });
     }
     newGame() {
         this.setState({
-        userGuess: '',
+        // userGuess: '',
         guesses: [],
         correctAnswer: Math.floor(Math.random()*100)+1,
         feedback: 'Make Your Guess'

@@ -106,7 +106,7 @@ ul {
   Media queries
 ---------------------------------------------------------------------------------*/
 @media screen and (max-width: 415px){
-  .game, input, button{
+  .game{
     width: 95% !important;
   }
 }
@@ -124,6 +124,7 @@ ul {
   ul {
     transition: all 0.2s linear;
   }
+  
 }
 
 @media screen and (min-width: 51rem) {
@@ -224,7 +225,7 @@ nav a {
 
 input,
 button {
-  width: 18.75rem;
+  width: 80%;
   height: 3.125rem;
   line-height: 100%;
   display: block;
@@ -260,7 +261,7 @@ button.button:focus {
 input.text {
   text-align: center;
   padding: 0.2em;
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 ul.guessBox {

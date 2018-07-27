@@ -5,8 +5,8 @@ import Info from './info';
 export default function Header(props){
   return (
     <header>
-      <Nav newGame={()=>props.newGame()} handleInfo={() =>props.handleInfo()}/>
       <Info handleInfo={() =>props.handleInfo()} visible= {props.visiblity}/>
+      <Nav newGame={()=>props.newGame()} handleInfo={() =>props.handleInfo()}/>
       <h1>HOT or COLD</h1>
     </header>
   );
