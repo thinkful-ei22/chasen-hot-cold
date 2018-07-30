@@ -14,8 +14,6 @@ export const hotColdReducer = (state=initialState, action) => {
     let guess = Number(action.guess);
     const diff = Math.abs(guess- state.correctAnswer)
     const diff2 = Math.abs(state.guesses[state.guesses.length-1]-state.correctAnswer)
-
-    
     let warmerColder = ''
     
     if(state.guesses.length >=1){

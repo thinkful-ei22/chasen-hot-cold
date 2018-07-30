@@ -9,7 +9,7 @@ export default function GuessBox(props){
   return (
     <div>
       <Feedback />
-      <GuessForm handleSubmit={props.handleNumSubmit} />
+      <GuessForm />
       <GuessCount />
       <GuessList />
     </div>
