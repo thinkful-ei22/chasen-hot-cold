@@ -1,7 +1,7 @@
 import React from 'react';
- 
+import {connect} from 'react-redux';
 
-export default function GuessList(props){
+export function GuessList(props){
     const guesses = props.guesses.map((guess,index)=>(
         <li key={index}>{guess}</li>
     ))
@@ -12,3 +12,8 @@ export default function GuessList(props){
   );
 };
 
+const mapStateToProps = state => ({
+  guesses: state.guesses
+});
+
+export default connect(mapStateToProps)(GuessList);

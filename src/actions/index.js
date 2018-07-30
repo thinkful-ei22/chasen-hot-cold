@@ -17,12 +17,10 @@ export const makeGuess = guess => ({
   guess
 })
 
-export const resetGame = correctAnswer => ({
-  type: RESET_GAME,
-  correctAnswer
+export const resetGame = () => ({
+  type: RESET_GAME
 })
 
-export const infoSection = info => ({
-  type: INFO_SECTION,
-  info
+export const infoSection = () => ({
+  type: INFO_SECTION
 })

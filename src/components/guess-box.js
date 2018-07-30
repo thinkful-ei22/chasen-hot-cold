@@ -8,10 +8,10 @@ import GuessList from './guess-list';
 export default function GuessBox(props){
   return (
     <div>
-      <Feedback feedback={props.feedback}/>
+      <Feedback />
       <GuessForm handleSubmit={props.handleNumSubmit} />
-      <GuessCount guessCount={props.guessCount}/>
-      <GuessList guesses={props.guesses}/>
+      <GuessCount />
+      <GuessList />
     </div>
   );
 };

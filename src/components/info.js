@@ -1,9 +1,11 @@
 import React from 'react';
 import './info.css';
+import {connect} from 'react-redux';
+import {infoSection} from '../actions';
 
-export default function Info(props){
+export function Info(props){
   return (
-    <section id="what" tabIndex="-1" style={{'display': (props.visible)? 'block': 'none'}}>
+    <section id="what" tabIndex="-1" style={{'display': (props.info)? 'block': 'none'}}>
       <div className='content'>
         <h2>What do I do?</h2>
         <div>
@@ -14,9 +16,15 @@ export default function Info(props){
             <li>3. You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
           </ul>
           <p>So, Are you ready?</p>
-          <button href='' onClick={()=>props.handleInfo()}>Close</button>
+          <button href='' onClick={()=>props.dispatch(infoSection())}>Close</button>
         </div>
       </div>
     </section>
   );
 };
+
+const mapStateToProps = state => ({
+  info: state.info
+})
+
+export default connect(mapStateToProps)(Info);

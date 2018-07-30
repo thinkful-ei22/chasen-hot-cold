@@ -13,18 +13,25 @@ export const hotColdReducer = (state=initialState, action) => {
     let feedback;
     let guess = Number(action.guess);
     const diff = Math.abs(guess- state.correctAnswer)
+    const diff2 = Math.abs(state.guesses[state.guesses.length-1]-state.correctAnswer)
+
     
+    let warmerColder = ''
+    
+    if(state.guesses.length >=1){
+        diff < diff2 ? warmerColder=', and your\'e getting warmer' : warmerColder= ', and your\'e getting colder'
+    }
 
     if(diff>=50){
-        feedback = 'You are Ice Cold'
+        feedback = 'You are Ice Cold'+warmerColder
     }else if(diff>=30){
-        feedback = 'You are Cold'
+        feedback = 'You are Cold'+warmerColder
     }else if(diff>=10){
-        feedback='You are Warm'
+        feedback='You are Warm'+warmerColder
     }else if (diff>=4){
-        feedback= 'You are Hot'
+        feedback= 'You are Hot'+warmerColder
     }else if (diff>=1){
-        feedback= 'You are on fire'
+        feedback= 'You are on fire'+warmerColder
     }else{
         feedback= 'WINNER'
     }

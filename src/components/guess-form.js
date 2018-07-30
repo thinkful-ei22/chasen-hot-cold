@@ -1,10 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {makeGuess} from '../actions';
 
-export default function GuessForm(props){
+export function GuessForm(props){
   return (
     <form onSubmit={e => {
         e.preventDefault();
-        props.handleSubmit(e.target.userGuess.value);
+        props.dispatch(makeGuess(e.target.userGuess.value));
         e.target.userGuess.value= '';
     }}>  
       <input 
@@ -28,5 +30,5 @@ export default function GuessForm(props){
   );
 };
 
-
-        
+export default connect()(GuessForm);
+       
